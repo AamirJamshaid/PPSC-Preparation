@@ -8,28 +8,34 @@ const items = [
   {
     id: '1',
     title: 'Subjects',
-    image: url.image,
+    image: url.Subject,
     nav: "Subjects"
   },
   {
     id: '2',
     title: 'Mock test',
-    image: url.image,
+    image: url.mock_test,
+    nav:"Mock"
+
   },
   {
     id: '3',
     title: 'Past Papers',
-    image: url.image,
+    image: url.Past_paper,
+    nav:"PaperSubjects"
   },
   {
     id: '4',
     title: 'Books',
-    image: url.image,
+    image: url.books,
+    nav:"Books"
+
   },
   {
     id: '5',
     title: 'Subcription',
-    image: url.image,
+    image: url.Subscription,
+    nav:"Subscribe"
   },
   // {
   //   id: '6',
@@ -67,7 +73,7 @@ const Item = ({ nav, title, image, navigation }) => (
       nav ? navigation.navigate(nav) : null
     }
   >
-    <Image style={styles.itemImage} source={{ uri: url.image }} />
+    <Image style={styles.itemImage} source={{ uri: image }} />
     <Text style={styles.itemTitle}>{title}</Text>
     <AntDesign name="right" size={24} color="black" />
   </TouchableOpacity>

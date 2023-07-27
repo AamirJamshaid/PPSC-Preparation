@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './Screens/Login';
@@ -9,22 +9,51 @@ import Subjects from './Screens/Subjects';
 import HomeScreen from './Screens/Selected';
 import MCQScreen from './Screens/Mcq';
 import Syllabus from './Screens/Syllabus';
+import Test from './Screens/Test';
+import ResultScreen from './Screens/ResultScreen';
+import Paper_Subjects from './Screens/PaperCategory';
+import Paper from './Screens/Paper';
+import Books from './Screens/Books';
+import MockTest from './Screens/MockTest';
+import SubscriptionScreen from './Screens/Subscription';
+import first from './Screens/First';
+import second from './Second';
+import third from './Screens/Third';
+import ForgetPasswordScreen from './Screens/Forget1';
+import OtpScreen from './Otpscreen';
+import NewPasswordScreen from './NewPassword';
 
 
 
 const Stack = createNativeStackNavigator();
 
 function App() {
+  LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
   return (
     <NavigationContainer >
-      <Stack.Navigator initialRouteName="Home"   >
-        <Stack.Screen name="Home" component={LoginScreen} options={{headerShown:false}} />
-        <Stack.Screen name="Signup" component={SignUpScreen} />
-        <Stack.Screen name="Forget" component={ForgotPasswordScreen} />
+      <Stack.Navigator initialRouteName="First"   >
+        <Stack.Screen name="First" component={first} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="First" component={second}  options={{headerShown:false}} /> */}
+        {/* <Stack.Screen name="Signup" component={SignUpScreen} /> */}
+
+        <Stack.Screen name="Home" component={second} options={{ headerShown: false }} />
+
+        <Stack.Screen name="register" component={third}  options={{headerShown:false}} />
+        <Stack.Screen name="Forget" component={ForgetPasswordScreen} />
+        <Stack.Screen name="Otp" component={OtpScreen} />
+        <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
         <Stack.Screen name="Dashboard" component={Syllabus} />
         <Stack.Screen name="Subjects" component={Subjects} />
+        <Stack.Screen name="PaperSubjects" component={Paper_Subjects} />
+        <Stack.Screen name="Paper" component={Paper} />
+        <Stack.Screen name="Books" component={Books} />
+        <Stack.Screen name="Mock" component={MockTest} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="MCQScreen" component={MCQScreen} />
+        <Stack.Screen name="Subscribe" component={SubscriptionScreen} />
+        <Stack.Screen name="Test" component={Test} />
+        <Stack.Screen name="Result" component={ResultScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

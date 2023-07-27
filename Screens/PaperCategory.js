@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, FlatList, ActivityIndicator,Image, TouchableOpa
 import url from '../url.json'
 import {useNavigation} from '@react-navigation/native'
 import axios from 'axios';
-const Subjects = () => {
+const Paper_Subjects = () => {
   const [loader,setloader]=useState(true);
 
   const [items, setItems] = useState([
@@ -19,7 +19,7 @@ const Subjects = () => {
     };
     axios.request(config)
     .then((response) => {
-      console.log(JSON.stringify(response.data));
+    //   console.log(JSON.stringify(response.data));
       setItems(response.data.data)
       setloader(false)
     })
@@ -40,8 +40,8 @@ GetData();
     return (
       <TouchableOpacity style={styles.SubjectsItem}
       onPress={()=>{
-        navigation.navigate("HomeScreen",{
-          Category:item.Category_Name
+        navigation.navigate("Paper",{
+            name:item.Category_Name
         })
       }}
       >
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Subjects;
+export default Paper_Subjects;
