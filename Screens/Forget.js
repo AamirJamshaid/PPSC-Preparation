@@ -1,10 +1,27 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 import url from '../url.json'
+import axios from 'axios';
 const ForgotPasswordScreen = () => {
   const [email, setEmail] = useState('');
 
   const handleResetPassword = () => {
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: `https://ask-me-ppsc.herokuapp.com/User/reset_email?email=${email}`,
+  headers: { }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+
   }
 
   return (

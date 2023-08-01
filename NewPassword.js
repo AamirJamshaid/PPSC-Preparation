@@ -1,3 +1,5 @@
+import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
@@ -5,12 +7,36 @@ const NewPasswordScreen = ({ route }) => {
   const { email } = route.params;
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
+  let navigation=useNavigation();
   const handleResetPassword = () => {
     // Implement your logic to update the user's password (not implemented in this example)
     // For demonstration purposes, we'll just log the new password to the console
-    console.log('New Password:', newPassword);
-    Alert.alert('Password Updated', 'Your password has been updated successfully.');
+    // console.log('New Password:', newPassword);
+    if(newPassword!=confirmPassword){
+      alert("Password not matched")
+      return;
+    }
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: `https://ask-me-ppsc.herokuapp.com/User/new_password?email=${email}&password=${newPassword}`,
+      headers: { }
+    };
+    
+    axios.request(config)
+    .then((response) => {
+      console.log(JSON.stringify(response.data));
+      if(response.data.status){
+
+        Alert.alert('Password Updated', 'Your password has been updated successfully.');
+        navigation.navigate("First")
+      }
+
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    
   };
 
   return (

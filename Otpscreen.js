@@ -1,15 +1,17 @@
+import { useRoute } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
-const OtpScreen = ({ route, navigation }) => {
-  const { email } = route.params;
-  const [otp, setOtp] = useState('');
-
+const OtpScreen = ({  navigation }) => {
+  let route=useRoute();
+  const { email,otp } = route.params;
+  const [otp1, setOtp] = useState('');
+   console.log(email,otp);
   // Function to verify the OTP
   const verifyOtp = () => {
     // For demonstration purposes, we'll hardcode the OTP as "123456"
     const correctOtp = "123456";
-    if (otp === correctOtp) {
+    if (otp1 === otp) {
       navigation.navigate('NewPassword', { email });
     } else {
       Alert.alert('Invalid OTP', 'Please enter the correct OTP.');
@@ -24,7 +26,7 @@ const OtpScreen = ({ route, navigation }) => {
         style={styles.input}
         placeholder="OTP"
         onChangeText={(text) => setOtp(text)}
-        value={otp}
+        value={otp1}
         keyboardType="numeric"
       />
       <TouchableOpacity style={styles.resetButton} onPress={verifyOtp}>

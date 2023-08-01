@@ -1,15 +1,30 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-
 const ForgetPasswordScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
 
   const handleRequestPasswordReset = () => {
     // Implement your logic here to send a password reset link to the provided email (not implemented in this example)
     // For demonstration purposes, we'll just log the email to the console
-    console.log('Email for password reset:', email);
+   
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: `https://ask-me-ppsc.herokuapp.com/User/reset_email?email=${email}`,
+  headers: { }
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+  navigation.navigate('Otp', { email,otp:response.data.otp });
+
+})
+.catch((error) => {
+  console.log(error);
+});
     // After requesting a password reset, navigate to the OTP screen
-    navigation.navigate('Otp', { email });
   };
 
   return (

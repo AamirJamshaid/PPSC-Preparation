@@ -39,7 +39,7 @@ const third = () => {
           console.log(JSON.stringify(response.data));
         setLoader(false)
           
-          Alert.alert(response.data)
+        //   Alert.alert(response.data)
          navigation.goBack();
         })
         .catch((error) => {
