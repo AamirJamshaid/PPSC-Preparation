@@ -19,7 +19,7 @@ const NewPasswordScreen = ({ route }) => {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: `https://ask-me-ppsc.herokuapp.com/User/new_password?email=${email}&password=${newPassword}`,
+      url: `https://ask-me-ppsc1-f6c12951af40.herokuapp.com/User/new_password?email=${email}&password=${newPassword}`,
       headers: { }
     };
     

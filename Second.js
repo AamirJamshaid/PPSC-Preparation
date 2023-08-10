@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Image, Alert,TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { a } from './assests/icon';
 import axios from 'axios';
-const second = ({ navigation }) => {
+const Second = ({ navigation }) => {
     const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loader,setloader]=useState(false)
@@ -16,7 +16,7 @@ const second = ({ navigation }) => {
         let config = {
           method: 'post',
           maxBodyLength: Infinity,
-          url: `https://ask-me-ppsc.herokuapp.com/User/Login?email=${email}&password=${password}`,
+          url: `https://ask-me-ppsc1-f6c12951af40.herokuapp.com/User/Login?email=${email}&password=${password}`,
           headers: {}
         };
     
@@ -154,4 +154,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default second;
+export default Second;

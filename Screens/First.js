@@ -7,7 +7,7 @@ import { a } from '../assests/icon'
 
 
 
-const first = ({navigation}) => {
+const First = ({navigation}) => {
   return (
     <View style={{height:'100%',width:'100%',alignItems:'center',justifyContent:'center'}}>
         <View>
@@ -48,4 +48,4 @@ const first = ({navigation}) => {
   )
 }
 
-export default first 
+export default First 

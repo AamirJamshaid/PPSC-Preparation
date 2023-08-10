@@ -16,9 +16,9 @@ import Paper from './Screens/Paper';
 import Books from './Screens/Books';
 import MockTest from './Screens/MockTest';
 import SubscriptionScreen from './Screens/Subscription';
-import first from './Screens/First';
-import second from './Second';
-import third from './Screens/Third';
+import First from './Screens/First';
+import Second from './Second';
+import Third from './Screens/Third';
 import ForgetPasswordScreen from './Screens/Forget1';
 import OtpScreen from './Otpscreen';
 import NewPasswordScreen from './NewPassword';
@@ -33,13 +33,13 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
   return (
     <NavigationContainer >
       <Stack.Navigator initialRouteName="First"   >
-        <Stack.Screen name="First" component={first} options={{ headerShown: false }} />
+        <Stack.Screen name="First" component={First} options={{ headerShown: false }} />
         {/* <Stack.Screen name="First" component={second}  options={{headerShown:false}} /> */}
         {/* <Stack.Screen name="Signup" component={SignUpScreen} /> */}
 
-        <Stack.Screen name="Home" component={second} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={Second} options={{ headerShown: false }} />
 
-        <Stack.Screen name="register" component={third}  options={{headerShown:false}} />
+        <Stack.Screen name="register" component={Third}  options={{headerShown:false}} />
         <Stack.Screen name="Forget" component={ForgetPasswordScreen} />
         <Stack.Screen name="Otp" component={OtpScreen} />
         <Stack.Screen name="NewPassword" component={NewPasswordScreen} />
