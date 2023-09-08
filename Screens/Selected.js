@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     alignItems: "center", justifyContent: "center"
   },
   selectedOptionButton: {
-    backgroundColor: '#00cc00',
-    borderColor: '#00cc00',
+    backgroundColor: '#00401A',
+    borderColor: '#00401A',
   },
   optionTitle: {
     fontSize: 18,

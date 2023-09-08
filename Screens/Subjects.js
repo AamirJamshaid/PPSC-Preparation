@@ -83,11 +83,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   SubjectsItem: {
+    
     width:"43%",
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
-    backgroundColor: '#fff',
+    backgroundColor:"#fff",
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {
@@ -105,6 +106,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   SubjectsItemTitle: {
+    color:"#00401A",
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',

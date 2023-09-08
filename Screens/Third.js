@@ -2,6 +2,7 @@ import { View, Text, Image, TextInput, ScrollView, TouchableOpacity, Modal, Acti
 import React, { useState } from 'react';
 import { a } from '../assests/icon';
 import { useNavigation } from '@react-navigation/native';
+
 import axios from 'axios';
 // import { a } from '../'
 const Third = () => {
@@ -11,7 +12,41 @@ const Third = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [Loader,setLoader]=useState(false)
+    
     const handleSignUp = () => {
+
+        const emailPattern = /^[a-z][a-z0-9._-]*@[a-z0-9.-]+\.[a-z]{2,4}$/;
+
+        if (!emailPattern.test(email)) {
+          Alert.alert('Please enter a valid email address starting with a lowercase letter.');
+          return;
+        }
+
+        if (!email.endsWith('@gmail.com')) {
+            Alert.alert('Please enter a valid email address.');
+            return;
+          }
+          if (password.length > 8) {
+            Alert.alert('Password must be at least 8 characters long.');
+            return;
+          }
+        //   const passwordPattern = /^[0-9]{1,7}$/;
+        //   if (!passwordPattern.test(password)) {
+        //     Alert.alert('Password must be less than 8 characters and contain only numbers.');
+        //     return;
+        //   }
+        // const passwordPattern = /^[a-zA-Z]{1,7}$/;
+        //   if (!passwordPattern.test(password)) {
+        //     Alert.alert('Password must be less than 8 characters and contain only latters.');
+        //     return;
+        //   }
+        // if (/^[a-zA-Z]+$/.test(password) || /^[0-9]+$/.test(password)) {
+        //     Alert.alert('Password must not consist of only letters or only numbers.');
+        //     return;
+        //   }
+        
+      
+      
         // handle sign up logic here
         setLoader(true)
         if(!email||!First||!LastName||!password){
@@ -27,7 +62,7 @@ const Third = () => {
         let config = {
           method: 'post',
           maxBodyLength: Infinity,
-          url: 'https://ask-me-ppsc1-f6c12951af40.herokuapp.com//User/Signup',
+          url: 'https://ask-me-ppsc1-f6c12951af40.herokuapp.com/User/Signup',
           headers: { 
             'Content-Type': 'application/json'
           },

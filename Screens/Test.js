@@ -165,8 +165,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     selectedOptionButton: {
-        backgroundColor: '#00cc00',
-        borderColor: '#00cc00',
+        backgroundColor: '#00401A',
+        borderColor: '#00401A',
     },
     optionTitle: {
         fontSize: 16,

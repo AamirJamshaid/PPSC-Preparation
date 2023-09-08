@@ -75,7 +75,7 @@ const Item = ({ nav, title, image, navigation }) => (
   >
     <Image style={styles.itemImage} source={{ uri: image }} />
     <Text style={styles.itemTitle}>{title}</Text>
-    <AntDesign name="right" size={24} color="black" />
+    <AntDesign name="right" size={24} color="#00401A" />
   </TouchableOpacity>
 );
 
@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
   },
   itemTitle: {
     fontSize: 18,
+    color:'#00401A',
     fontWeight: 'bold',
     flex: 1,
   },
