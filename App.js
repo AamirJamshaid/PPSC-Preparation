@@ -22,6 +22,7 @@ import Third from './Screens/Third';
 import ForgetPasswordScreen from './Screens/Forget1';
 import OtpScreen from './Otpscreen';
 import NewPasswordScreen from './NewPassword';
+// import NewPasswordScreen from './NewPassword';
 
 
 
