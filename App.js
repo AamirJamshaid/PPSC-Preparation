@@ -36,6 +36,7 @@ LogBox.ignoreAllLogs();//Ignore all log notifications
         <Stack.Screen name="First" component={First} options={{ headerShown: false }} />
         {/* <Stack.Screen name="First" component={second}  options={{headerShown:false}} /> */}
         {/* <Stack.Screen name="Signup" component={SignUpScreen} /> */}
+        {/* <Stack.Screen name="First" component={second}  options={{headerShown:false}} /> */}
 
         <Stack.Screen name="Home" component={Second} options={{ headerShown: false }} />
 
